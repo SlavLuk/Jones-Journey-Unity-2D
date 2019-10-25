@@ -30,7 +30,7 @@ public class Pistol : MonoBehaviour
         {
             if(Time.time >= shotTime)
             {
-                Instantiate(bullet, shotPoint.position, transform.rotation);
+                Instantiate(bullet, shotPoint.position, shotPoint.transform.rotation);
                 shotTime = Time.time + timeBetweenShots;
             }
         }
