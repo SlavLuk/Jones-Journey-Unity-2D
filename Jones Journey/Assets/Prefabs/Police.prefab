@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375516077485006227}
   - component: {fileID: 375516077485006224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375516077692020510}
   - component: {fileID: 375516077692020511}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375516077692020449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0044329166, y: -0.8079078, z: 29.044922}
+  m_LocalPosition: {x: 0.0044329166, y: -0.8079078, z: 29.04492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 375516077485006227}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375516078030186919}
   - component: {fileID: 375516078030186916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375516078096873738}
   - component: {fileID: 375516078096873739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,9 +337,12 @@ GameObject:
   m_Component:
   - component: {fileID: 375516078149959340}
   - component: {fileID: 375516078149959343}
-  m_Layer: 0
+  - component: {fileID: 363677875}
+  - component: {fileID: 363677874}
+  - component: {fileID: 363677873}
+  m_Layer: 8
   m_Name: Police
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -351,9 +354,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375516078149959342}
-  m_LocalRotation: {x: -0, y: -0, z: -0.00000018812716, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.75, y: -0.48, z: -29.044922}
-  m_LocalScale: {x: 0.5085159, y: 0.4563952, z: 1}
+  m_LocalScale: {x: 0.33350626, y: 0.29953125, z: 1}
   m_Children:
   - {fileID: 375516077692020510}
   - {fileID: 375516078096873738}
@@ -381,6 +384,72 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &363677875
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375516078149959342}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &363677874
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375516078149959342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008604646, y: 0.5944052}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9790456, y: 5.946991}
+  m_EdgeRadius: 0
+--- !u!114 &363677873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375516078149959342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd16873460ff5543a5ca734f301dac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  speed: 20
+  player: {fileID: 0}
+  timeBetweenAttack: 3
+  damage: 1
+  stopDistance: 5
+  attackSpeed: 8
 --- !u!1 &375516078300002018
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375516078300002019}
   - component: {fileID: 375516078300002016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375516078469019430}
   - component: {fileID: 375516078469019433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: char_shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,8 +556,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375516078469019432}
   m_LocalRotation: {x: -0, y: -0, z: 0.00000018812716, w: 1}
-  m_LocalPosition: {x: 0.07644424, y: -2.2749786, z: 29.044922}
-  m_LocalScale: {x: 1.9665068, y: 2.1910837, z: 1}
+  m_LocalPosition: {x: 0.03, y: -2.4, z: 29.044922}
+  m_LocalScale: {x: 1.5728214, y: 0.63226455, z: 1}
   m_Children: []
   m_Father: {fileID: 375516078149959340}
   m_RootOrder: 3
@@ -532,7 +601,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 8fa80608cdb7ae2459300679596a4178, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4392157}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5294118}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -552,7 +621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375516078892141211}
   - component: {fileID: 375516078892141208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375516078892141210}
   m_LocalRotation: {x: -0, y: -0, z: 0.00000018812716, w: 1}
-  m_LocalPosition: {x: -0.07, y: 2.98, z: 0}
+  m_LocalPosition: {x: -0.05, y: 3.07, z: 0}
   m_LocalScale: {x: 0.9141376, y: 0.8627392, z: 1}
   m_Children: []
   m_Father: {fileID: 375516077692020510}
@@ -613,7 +682,7 @@ SpriteRenderer:
   m_SortingOrder: -2
   m_Sprite: {fileID: 1772789605241533039, guid: 3ff2b26e198dce74b8c683c9884abab0,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.54509807}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -633,7 +702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375516079276633945}
   - component: {fileID: 375516079276633942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
