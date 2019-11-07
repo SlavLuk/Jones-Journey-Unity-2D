@@ -8,7 +8,6 @@ public class EnemyBullet : MonoBehaviour
     private Vector2 targetPosition;
     public float speed;
     public int damage;
-
     [SerializeField]
     private GameObject explosion;
 
@@ -24,6 +23,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, targetPosition) > .1f)
         {
+           
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }
         else
