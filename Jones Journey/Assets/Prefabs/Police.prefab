@@ -443,13 +443,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd16873460ff5543a5ca734f301dac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  speed: 20
+  health: 1
+  speed: 10
   player: {fileID: 0}
-  timeBetweenAttack: 3
+  timeBetweenAttack: 5
   damage: 1
-  stopDistance: 5
-  attackSpeed: 8
+  stopDistance: 3
+  attackSpeed: 5
 --- !u!1 &375516078300002018
 GameObject:
   m_ObjectHideFlags: 0
