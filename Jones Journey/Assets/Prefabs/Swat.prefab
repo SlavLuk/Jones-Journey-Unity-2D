@@ -866,6 +866,10 @@ MonoBehaviour:
   player: {fileID: 0}
   timeBetweenAttack: 3
   damage: 1
+  pickupChange: 30
+  pickups:
+  - {fileID: 2208544601142024915, guid: eac9085e8b48d7a43b4eebb431975105, type: 3}
+  - {fileID: 2208544601142024915, guid: eac9085e8b48d7a43b4eebb431975105, type: 3}
   stopDistance: 3
   shotPoint: {fileID: 945167836035618068}
   enemyBullet: {fileID: 6511158075841750486, guid: 603d5c3a4c608c645a3507dea9d39ec6,
@@ -1031,6 +1035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.47159192
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802036723715934032, guid: d538fb778b000b3469b7fccbefee1fe5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d538fb778b000b3469b7fccbefee1fe5, type: 3}
