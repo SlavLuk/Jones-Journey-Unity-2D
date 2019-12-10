@@ -5,22 +5,30 @@ using UnityEngine.UI;
 
 public class Player: MonoBehaviour
 {
-   [SerializeField]
-    private float speed;
+    [SerializeField]
+    private float speed;  
+    [SerializeField]
+    private int health;
+    [SerializeField]
+    private Image[] hearts;
+    [SerializeField]
+    private Sprite fullHeart;
+    [SerializeField]
+    private Sprite emptyHeart;
+    private SceneTransition sceneTrans;
     private Rigidbody2D rb;
     private Animator anim;
     private Vector2 moveAmount;
-    public int health;
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
 
+   
 
     // Start is called before the first frame update
     void Start()
     {
+     
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        sceneTrans = FindObjectOfType<SceneTransition>();
     }
 
     // Update is called once per frame
@@ -50,9 +58,15 @@ public class Player: MonoBehaviour
 
         health -= damageAmount;
         UpdateHeartUI(health);
-        if (health <= 0)
+
+        if (health == 0)
         {
+            
             Destroy(this.gameObject);
+          
+           sceneTrans.LoadScene("Lost Menu");
+            
+           
         }
 
     }

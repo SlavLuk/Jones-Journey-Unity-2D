@@ -30,6 +30,7 @@ public class PoliceEnemy : Enemy
         IEnumerator Attack()
         {
             player.GetComponent<Player>().TakeDamage(damage);
+         
 
             Vector2 originPosition = transform.position;
             Vector2 targetPosion = player.position;

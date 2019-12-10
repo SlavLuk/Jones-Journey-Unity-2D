@@ -874,6 +874,8 @@ MonoBehaviour:
   shotPoint: {fileID: 945167836035618068}
   enemyBullet: {fileID: 6511158075841750486, guid: 603d5c3a4c608c645a3507dea9d39ec6,
     type: 3}
+  enemyShot: {fileID: 8300000, guid: 549d325eeedf23c42a82e1eef0e4c6ec, type: 3}
+  shootVolume: 0.75
 --- !u!1001 &8111194245203767004
 PrefabInstance:
   m_ObjectHideFlags: 0

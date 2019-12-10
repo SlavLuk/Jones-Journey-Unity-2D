@@ -122,3 +122,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 1
+  healthPickup: {fileID: 8300000, guid: ea472d0f4da64854999021194624b1f7, type: 3}
+  shootVolume: 1

@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour
     private int damage;
     [SerializeField]
     private GameObject explosion;
+   
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,10 @@ public class Bullet : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
+            
             collision.GetComponent<Enemy>().TakeDamage(damage);
+         
+
             DestroyBullet();
         }
     }

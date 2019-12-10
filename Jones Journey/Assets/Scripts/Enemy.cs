@@ -10,19 +10,32 @@ public class Enemy : MonoBehaviour
     protected float speed;
     [HideInInspector]
     public Transform player;
-    public float timeBetweenAttack;
-    public int damage;
-    public int pickupChange;
-    public GameObject[] pickups;
+    [SerializeField]
+    protected float timeBetweenAttack;
+    [SerializeField]
+    protected int damage;
+    [SerializeField]
+    private int pickupChange;
+    [SerializeField]
+    private GameObject[] pickups;
+    [SerializeField]
+    protected int scoreValue = 100;
+  
 
     public virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+      
+
+
+
     }
 
 
     public void TakeDamage(int damageAmount)
     {
+       
+         FindObjectOfType<GameSession>().AddToScore(scoreValue);
 
         health -= damageAmount;
 
@@ -34,6 +47,9 @@ public class Enemy : MonoBehaviour
                 GameObject randomPickup = pickups[Random.Range(0, pickups.Length)];
                 Instantiate(randomPickup, transform.position, transform.rotation);
             }
+
+          
+
             Destroy(this.gameObject);
         }
 

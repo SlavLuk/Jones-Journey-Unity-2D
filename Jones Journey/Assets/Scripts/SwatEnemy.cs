@@ -9,6 +9,11 @@ public class SwatEnemy : Enemy
     private Animator anim;
     public Transform shotPoint;
     public GameObject enemyBullet;
+    [SerializeField]
+    private AudioClip enemyShot;
+    [SerializeField]
+    [Range(0, 1)]
+    private float shootVolume = 0.75f;
 
     // Start is called before the first frame update
     public override void Start()
@@ -41,6 +46,8 @@ public class SwatEnemy : Enemy
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         shotPoint.rotation = rotation;
+
+        AudioSource.PlayClipAtPoint(enemyShot, Camera.main.transform.position, shootVolume);
         Instantiate(enemyBullet, shotPoint.position, shotPoint.transform.rotation);
 
     }

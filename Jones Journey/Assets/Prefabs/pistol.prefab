@@ -97,6 +97,8 @@ MonoBehaviour:
   bullet: {fileID: 3974491126405598397, guid: fe95256ca00d9aa42b8c63c100de11dc, type: 3}
   shotPoint: {fileID: 2012774049764703873}
   timeBetweenShots: 0.5
+  playerShot: {fileID: 8300000, guid: 549d325eeedf23c42a82e1eef0e4c6ec, type: 3}
+  shootVolume: 0.75
 --- !u!1001 &7377993806119847241
 PrefabInstance:
   m_ObjectHideFlags: 0
