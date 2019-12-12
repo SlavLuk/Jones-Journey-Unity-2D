@@ -8,6 +8,9 @@ TagManager:
   - Weapon
   - Music
   - GameSession
+  - Resume
+  - MusicSlider
+  - DropDown
   layers:
   - Default
   - TransparentFX

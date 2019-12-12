@@ -26,22 +26,27 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = rotation;
 
-        if (Input.GetMouseButton(0))
+        if(Time.timeScale != 0f)
         {
-            if(Time.time >= shotTime)
-            {
+            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = rotation;
 
-                AudioSource.PlayClipAtPoint(playerShot, Camera.main.transform.position, shootVolume);
-                Instantiate(bullet, shotPoint.position, shotPoint.transform.rotation);
-                
-                shotTime = Time.time + timeBetweenShots;
+            if (Input.GetMouseButton(0))
+            {
+                if (Time.time >= shotTime)
+                {
+
+                    AudioSource.PlayClipAtPoint(playerShot, Camera.main.transform.position, shootVolume);
+                    Instantiate(bullet, shotPoint.position, shotPoint.transform.rotation);
+
+                    shotTime = Time.time + timeBetweenShots;
+                }
             }
         }
+    
 
     }
 }
