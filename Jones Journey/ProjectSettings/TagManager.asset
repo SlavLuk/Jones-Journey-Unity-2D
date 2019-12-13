@@ -11,6 +11,7 @@ TagManager:
   - Resume
   - MusicSlider
   - DropDown
+  - PauseBtn
   layers:
   - Default
   - TransparentFX

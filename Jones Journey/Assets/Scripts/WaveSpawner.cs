@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -19,15 +20,34 @@ public class WaveSpawner : MonoBehaviour
     private int currentWaveIndex;
     private Transform player;
     private bool finishedSpawning;
+    private float currentTime = 1f;
+    private float startTime = 4f;
+    [SerializeField]
+    private Text countDown;
+
 
     private void Start()
     {
+        
+        currentTime = startTime;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(StartNextWave(currentWaveIndex));
     }
 
+    IEnumerator CountDown()
+    {
+        currentTime = startTime;
+        yield return countDown.color = Color.white;
+
+
+    }
+
     IEnumerator StartNextWave(int index)
     {
+
+        StartCoroutine(CountDown());
+      
+
         yield return new WaitForSeconds(timeBetweenWaves);
         StartCoroutine(SpawnWave(index));
     }
@@ -64,6 +84,22 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+
+        currentTime -= 1 * Time.deltaTime;
+        if (countDown != null)
+        {
+            countDown.text = ((int)currentTime).ToString();
+        }
+       
+
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+
+            countDown.color = Color.clear;
+        }
+
         if(finishedSpawning == true && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             finishedSpawning = false;

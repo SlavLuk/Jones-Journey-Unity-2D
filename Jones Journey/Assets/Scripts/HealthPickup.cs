@@ -20,13 +20,18 @@ public class HealthPickup : MonoBehaviour
         
     }
 
+  
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && gameObject!=null)
         {
             playerScript.Heal(healAmount);
             AudioSource.PlayClipAtPoint(healthPickup, Camera.main.transform.position, shootVolume);
+            
             Destroy(gameObject);
         }
     }
+
+  
 }
